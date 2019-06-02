@@ -1,6 +1,7 @@
 from github import Github
 import os
 import subprocess
+import sys
 
 check = subprocess.Popen("git --version", shell=True)
 check.wait()
@@ -16,7 +17,11 @@ except KeyError:
 
 g = Github(githubToken)
 
-dstDir = "repos"
+if len(sys.argv) < 2:
+    print("Usage: python main.py destination")
+    exit(1)
+
+dstDir = sys.argv[1]
 
 for repo in g.get_user().get_repos():
     print(repo.name)
