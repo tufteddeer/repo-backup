@@ -11,6 +11,7 @@ Uses PyGithub to speak to the github.com api.
 ## Backup:
 
 `export GITHUB_API_TOKEN=mytoken`
+
 `python backup-repos.py /path/to/backup/directory`
 
 ## Restore
